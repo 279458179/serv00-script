@@ -1,3 +1,4 @@
+
 name: 恢复vless服务并发送Telegram消息
 
 on:
@@ -29,5 +30,8 @@ jobs:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
+          echo ${{ secrets.ACCOUNTS_JSON }} 
+          echo ${{ secrets.TELEGRAM_TOKEN }}
+          echo ${{ secrets.TELEGRAM_CHAT_ID }}
           python3 vless/recover_vless.py
 
